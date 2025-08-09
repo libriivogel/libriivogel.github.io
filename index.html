@@ -174,7 +174,7 @@
     <h2 class="section-title">Zgjidh Paketën Tënde</h2>
     <div class="cards">
       <div class="card">
-        <h3>✨ Ylli me Emrin Tënd</h3>
+        <h3>Libri me emrin tënd</h3>
         <ul class="features">
           <li>Emri i fëmijës</li>
           <li>Ilustrime ngjyrash</li>
@@ -183,18 +183,19 @@
         <a href="#order" class="cta">Zgjidh Paketën</a>
       </div>
       <div class="card">
-        <h3>🏞️ Aventura në Tokën e Shqiponjave</h3>
+        <h3>Aventura në tokën e Shqiponjave</h3>
         <ul class="features">
-          <li>Emri + vendlindja</li>
-          <li>Vende shqiptare</li>
+          <li>Emri + Vendlindja</li>
+          <li>Vende Shqiptare</li>
           <li>Ilustrime kulturore</li>
         </ul>
         <a href="#order" class="cta">Zgjidh Paketën</a>
       </div>
       <div class="card">
-        <h3>🐾 Libri i Botës Sate</h3>
+        <h3>Unë dhe 4-Putroshi im</h3>
         <ul class="features">
-          <li>Emri, vendlindja, vende shqiptare</li>
+          <li>Emri, vendlindja</li>
+          <li>Vende Shqiptare</li>
           <li>Kafshët shtëpiake</li>
           <li>Dedikim & paketim dhuratë</li>
         </ul>
@@ -230,7 +231,6 @@
     </div>
   </section>
 
-  <!-- Formular porosie -->
 <section id="order" style="max-width: 500px; margin: 50px auto; padding: 20px; background: rgba(255,255,255,0.9); border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
   <h2 class="section-title" style="text-align:center; color:#ff6f61;">Bëj Porosinë Tënde</h2>
   
@@ -241,9 +241,9 @@
     
     <label for="paketa">Zgjidh Paketën</label>
     <select id="paketa" name="paketa" style="padding:10px; border:1px solid #ddd; border-radius:10px; font-size:16px; background:#fff8f0;">
-      <option value="Ylli me Emrin Tënd">✨ Ylli me Emrin Tënd</option>
-      <option value="Aventura në Tokën e Shqiponjave">🏞️ Aventura në Tokën e Shqiponjave</option>
-      <option value="Libri i Botës Sate">🐾 Libri i Botës Sate</option>
+      <option value="Libri me emrin tënd">Libri me emrin tënd</option>
+      <option value="Aventura në tokën e Shqiponjave"></option>Aventura në tokën e Shqiponjave</option>
+      <option value="Unë dhe 4-Putroshi im">Unë dhe 4-Putroshi im</option>
     </select>
     
     <label for="dedikim">Mesazh / Dedikim</label>
@@ -264,7 +264,7 @@ function sendToWhatsApp(event) {
   const dedikim = document.getElementById('dedikim').value.trim();
 
   // Ndërto mesazhin për WhatsApp
-  const message = `Përshëndetje! Dua të porosis një libër personalizuar.\n Emri: ${emri}\n Paketa: ${paketa}\n Dedikim: ${dedikim}`;
+  const message = `Përshëndetje! Dua të porosis një libër personalizuar.\n\n Emri: ${emri}\n Paketa: ${paketa}\n Dedikim: ${dedikim}`;
   const encodedMessage = encodeURIComponent(message);
   const phone = "355692191518";
 
