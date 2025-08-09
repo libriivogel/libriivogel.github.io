@@ -231,23 +231,27 @@
   </section>
 
   <!-- Formular porosie -->
-<section id="order">
-  <h2 class="section-title">Bëj Porosinë Tënde</h2>
-  <form id="orderForm" onsubmit="sendToWhatsApp(event)">
+<section id="order" style="max-width: 500px; margin: 50px auto; padding: 20px; background: rgba(255,255,255,0.9); border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+  <h2 class="section-title" style="text-align:center; color:#ff6f61;">Bëj Porosinë Tënde</h2>
+  
+  <form id="orderForm" onsubmit="sendToWhatsApp(event)" style="display:flex; flex-direction:column; gap:15px;">
+    
     <label for="emri">Emri i fëmijës</label>
-    <input type="text" id="emri" name="emri" required>
-
+    <input type="text" id="emri" name="emri" required style="padding:10px; border:1px solid #ddd; border-radius:10px; font-size:16px; background:#fff8f0;">
+    
     <label for="paketa">Zgjidh Paketën</label>
-    <select id="paketa" name="paketa">
+    <select id="paketa" name="paketa" style="padding:10px; border:1px solid #ddd; border-radius:10px; font-size:16px; background:#fff8f0;">
       <option value="Ylli me Emrin Tënd">✨ Ylli me Emrin Tënd</option>
       <option value="Aventura në Tokën e Shqiponjave">🏞️ Aventura në Tokën e Shqiponjave</option>
       <option value="Libri i Botës Sate">🐾 Libri i Botës Sate</option>
     </select>
-
+    
     <label for="dedikim">Mesazh / Dedikim</label>
-    <textarea id="dedikim" name="dedikim" rows="4"></textarea>
-
-    <button type="submit" class="cta">Dërgo Porosinë</button>
+    <textarea id="dedikim" name="dedikim" rows="4" style="padding:10px; border:1px solid #ddd; border-radius:10px; font-size:16px; background:#fff8f0;"></textarea>
+    
+    <button type="submit" style="padding:12px; background:#ffb347; border:none; border-radius:20px; font-size:18px; font-weight:bold; cursor:pointer; color:#fff; transition:0.3s;">
+      📩 Dërgo Porosinë
+    </button>
   </form>
 </section>
 
