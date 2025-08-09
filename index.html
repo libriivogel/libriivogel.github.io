@@ -1,1 +1,251 @@
-<h1>Dori</h1>
+<!doctype html>
+<html lang="sq">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Libri Im i Vogël — Librat Personalizuar për Fëmijë</title>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&family=Inter:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#fffdf6; --card:#ffffff; --accent:#ff6b6b; --muted:#7a7a7a;
+      --pastel1:#ffd9e8; --pastel2:#fff5ba; --pastel3:#cde7ff; --pastel4:#cfffe5;
+      --radius:18px; --sketch:3px;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Baloo 2', Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,var(--bg),#f6fbff);color:#222}
+    header{padding:48px 20px 24px; text-align:center}
+    .wrap{max-width:1100px;margin:0 auto}
+    h1{font-family:'Baloo 2',cursive;font-size:40px;margin:0 0 8px;color:#27323a}
+    p.lead{margin:0 auto 18px;max-width:760px;color:var(--muted);font-size:16px}
+
+    /* Hero */
+    .hero{display:flex;align-items:center;gap:30px;justify-content:center;padding:18px}
+    .hero-illus{width:320px;height:240px;background:linear-gradient(135deg,var(--pastel1),var(--pastel2));border-radius:24px;box-shadow: 8px 12px 24px rgba(0,0,0,0.08);display:flex;align-items:center;justify-content:center;position:relative}
+    .hero-illus:before{content:'';position:absolute;inset:18px;border-radius:14px;background:rgba(255,255,255,0.25)}
+    .hero-illus svg{width:80%;height:80%}
+
+    /* Cards */
+    .cards{display:flex;gap:20px;flex-wrap:wrap;justify-content:center;padding:34px}
+    .card{background:var(--card);border-radius:var(--radius);padding:22px;width:300px;box-shadow: 0 8px 20px rgba(34,34,34,0.06);border:3px solid rgba(255,107,107,0.06);position:relative}
+    .card.popular{border-color:var(--accent);transform:translateY(-6px)}
+    .card h3{margin:0 0 6px;font-size:20px;color:#25343a}
+    .tag{display:inline-block;padding:6px 10px;border-radius:12px;font-size:13px;margin-bottom:12px;background:linear-gradient(90deg,var(--pastel4),#e8fff4);border:2px dashed rgba(0,0,0,0.04)}
+    .features{list-style:none;padding:0;margin:10px 0;color:#333}
+    .features li{margin:10px 0;padding-left:26px;position:relative}
+    .features li:before{content:'🌟';position:absolute;left:0;top:0}
+    .price{font-weight:700;font-size:18px;margin-top:12px}
+    .cta{display:inline-block;margin-top:12px;padding:10px 16px;border-radius:12px;background:var(--accent);color:white;text-decoration:none}
+
+    /* How it works */
+    .how{background:linear-gradient(180deg,#fff,#f7fbff);padding:30px;border-radius:20px;margin:30px 20px}
+    .steps{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+    .step{background:var(--card);padding:16px;border-radius:14px;min-width:220px;box-shadow:0 6px 14px rgba(0,0,0,0.04);}
+    .step h4{margin:6px 0 8px}
+    .small{font-size:14px;color:var(--muted)}
+
+    /* Order form */
+    form{background:var(--card);padding:20px;border-radius:16px;box-shadow:0 8px 18px rgba(0,0,0,0.05);max-width:820px;margin:24px auto}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    label{font-size:13px;color:#38434a}
+    input[type=text],select,textarea{width:100%;padding:10px;border-radius:10px;border:2px solid rgba(0,0,0,0.06);font-size:14px}
+    textarea{min-height:100px;resize:vertical}
+    .full{grid-column:1/-1}
+    .submit{background:var(--accent);color:white;padding:10px 16px;border-radius:12px;border:none;font-weight:600;cursor:pointer}
+
+    footer{padding:30px;text-align:center;color:var(--muted);font-size:14px}
+
+    /* Responsive */
+    @media(min-width:900px){.hero{padding:36px}.hero-illus{width:420px;height:300px}.grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:700px){.cards{flex-direction:column;align-items:center}.grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header class="wrap header">
+    <h1>Libri Im i Vogël</h1>
+    <p class="lead">Krijojmë libra plot ngjyra dhe dashuri — histori personale ku fëmija është protagonisti. Zgjidhni paketën që ju përshtatet dhe bëni dhuratën më të veçantë.</p>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div>
+        <h2 style="margin-top:0">📚 Librat që flasin për fëmijën</h2>
+        <p class="small" style="max-width:420px">Historitë tona përfshijnë emrin e fëmijës dhe elemente personale — vendlindje, vende të bukura shqiptare, dhe kafshët e zemrës. Të gjitha të pintuara me stil të butë dhe të dashur për fëmijët.</p>
+        <div style="margin-top:12px">
+          <a class="cta" href="#packages">Shiko paketat</a>
+          <a class="cta" href="#order" style="background:#4ca3ff;margin-left:10px">Porositi tani</a>
+        </div>
+      </div>
+
+      <div class="hero-illus" aria-hidden>
+        <!-- playful SVG illustration -->
+        <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+          <rect x="6" y="6" width="188" height="128" rx="14" ry="14" fill="none" stroke="rgba(0,0,0,0.06)" stroke-width="3"/>
+          <circle cx="60" cy="60" r="28" fill="#fff" stroke="#ffd9e8" stroke-width="6"/>
+          <circle cx="140" cy="70" r="36" fill="#fff" stroke="#cde7ff" stroke-width="6"/>
+          <path d="M20 110 q40 -30 80 0 q40 -30 80 0" fill="none" stroke="#fff5ba" stroke-width="18" stroke-linecap="round"/>
+          <text x="34" y="82" font-family='Baloo 2' font-size="22" fill="#27323a">Mirë se vjen!</text>
+        </svg>
+      </div>
+    </section>
+
+    <section id="packages">
+      <div class="cards">
+        <!-- Package 1 -->
+        <article class="card">
+          <span class="tag">Paketa 1</span>
+          <h3>Emri në Përrallë</h3>
+          <p class="small">E thjeshtë, e ngrohtë dhe e mrekullueshme për çdo rast.</p>
+          <ul class="features">
+            <li>Historia përfshin <strong>emrin</strong> e fëmijës</li>
+            <li>Ilustrime standarde, plot ngjyra</li>
+            <li>Printim cilësor (softcover)</li>
+          </ul>
+          <div class="price">Çmim: i përballueshëm</div>
+          <a class="cta" href="#order" onclick="selectPackage(1)">Zgjidh këtë</a>
+        </article>
+
+        <!-- Package 2 -->
+        <article class="card popular">
+          <span class="tag">Paketa 2</span>
+          <h3>Rrugëtimi Shqiptar</h3>
+          <p class="small">Një udhëtim për të ndjerë rrënjët dhe bukuritë e vendit.</p>
+          <ul class="features">
+            <li>Emri i fëmijës</li>
+            <li><strong>Vendlindja</strong> e përfshirë në tregim</li>
+            <li>Vende të njohura shqiptare si pjesë e aventurës</li>
+            <li>Ilustrime me elementë kulturorë</li>
+          </ul>
+          <div class="price">Çmim: më i lartë se baza</div>
+          <a class="cta" href="#order" onclick="selectPackage(2)">Zgjidh këtë</a>
+        </article>
+
+        <!-- Package 3 -->
+        <article class="card">
+          <span class="tag">Paketa 3</span>
+          <h3>Mrekullia Personale</h3>
+          <p class="small">Libër plot detaje — si një kujtim familjar i pashlyeshëm.</p>
+          <ul class="features">
+            <li>Emri + vendlindja + vende shqiptare</li>
+            <li><strong>Kafshët shtëpiake</strong> shfaqen si personazhe</li>
+            <li>Ilustrime të personalizuara sipas përshkrimit/fotove</li>
+            <li>Kapak luksoz, dedikim dhe paketim dhuratë</li>
+          </ul>
+          <div class="price">Çmim: Premium</div>
+          <a class="cta" href="#order" onclick="selectPackage(3)">Zgjidh këtë</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="how wrap">
+      <h3 style="text-align:center">Si funksionon</h3>
+      <div class="steps">
+        <div class="step">
+          <h4>1. Zgjidh paketën</h4>
+          <div class="small">Pickoni nivelin e personalizimit që dëshironi.</div>
+        </div>
+        <div class="step">
+          <h4>2. Na dërgo informacion</h4>
+          <div class="small">Emri, vendlindja, përshkrimi i kafshës ose fotoja nëse dëshironi ilustrim të saktë.</div>
+        </div>
+        <div class="step">
+          <h4>3. Mirato dizajnin</h4>
+          <div class="small">Ne përgatitim drafte; ju jepni miratimin për shtyp.</div>
+        </div>
+        <div class="step">
+          <h4>4. Dorëzimi</h4>
+          <div class="small">Libri ju vjen i paketuar dhe gati për t'u dhuruar.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="order">
+      <form onsubmit="return sendOrder(event)">
+        <h3 style="margin-top:0">Porosi / Kërkesë personalizimi</h3>
+        <div class="grid">
+          <div>
+            <label>Emri i porositësit</label>
+            <input type="text" id="buyerName" placeholder="Emri juaj" required>
+          </div>
+          <div>
+            <label>Emri i fëmijës</label>
+            <input type="text" id="childName" placeholder="Emri i fëmijës" required>
+          </div>
+
+          <div>
+            <label>Zgjidh paketën</label>
+            <select id="packageSelect" required>
+              <option value="1">1 — Emri në Përrallë</option>
+              <option value="2">2 — Rrugëtimi Shqiptar</option>
+              <option value="3">3 — Mrekullia Personale</option>
+            </select>
+          </div>
+          <div>
+            <label>Vendlindja (vetëm për Paketën 2 & 3)</label>
+            <input type="text" id="birthplace" placeholder="P.sh. Berat, Shkodër...">
+          </div>
+
+          <div>
+            <label>Kafshet shtëpiake (vetëm për Paketën 3)</label>
+            <input type="text" id="pets" placeholder="P.sh. Qeni: Bubi, Mace: Miu">
+          </div>
+          <div>
+            <label>Foto (opsionale)</label>
+            <input type="file" id="photo" accept="image/*">
+          </div>
+
+          <div class="full">
+            <label>Mesazh / Instruksione të veçanta</label>
+            <textarea id="notes" placeholder="Dëshironi një dedikim ose diçka tjetër?"></textarea>
+          </div>
+
+          <div class="full">
+            <button class="submit" type="submit">Dërgo kërkesën (hap email)</button>
+          </div>
+        </div>
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    <div>© <strong>Libri Im i Vogël</strong> — Librat personalizuar për fëmijë • Kontakt: info@example.com</div>
+  </footer>
+
+  <script>
+    function selectPackage(n){
+      document.getElementById('packageSelect').value = n;
+      window.location.hash = '#order';
+      // small highlight
+      const el = document.querySelector('form');
+      el.style.transition='box-shadow 0.3s';
+      el.style.boxShadow='0 12px 30px rgba(0,0,0,0.08)';
+      setTimeout(()=>el.style.boxShadow='0 8px 18px rgba(0,0,0,0.05)',800);
+    }
+
+    function sendOrder(e){
+      e.preventDefault();
+      const buyer = encodeURIComponent(document.getElementById('buyerName').value || '');
+      const child = encodeURIComponent(document.getElementById('childName').value || '');
+      const pack = document.getElementById('packageSelect').value;
+      const birthplace = encodeURIComponent(document.getElementById('birthplace').value || '');
+      const pets = encodeURIComponent(document.getElementById('pets').value || '');
+      const notes = encodeURIComponent(document.getElementById('notes').value || '');
+
+      const subject = encodeURIComponent('Porosi Libri Im i Vogël — Paketë ' + pack + ' — ' + child);
+      let body = 'Porositës: ' + buyer + '%0D%0A';
+      body += 'Fëmija: ' + child + '%0D%0A';
+      body += 'Paketë: ' + pack + '%0D%0A';
+      if(birthplace) body += 'Vendlindja: ' + birthplace + '%0D%0A';
+      if(pets) body += 'Kafshët: ' + pets + '%0D%0A';
+      if(notes) body += 'Shënime: ' + notes + '%0D%0A';
+      body += '%0D%0A' + 'Ju lutem bashkangjitni çdo foto në emailin që do të hapet.';
+
+      // open user's email client with prefilled mail
+      const mailto = 'mailto:info@example.com?subject=' + subject + '&body=' + body;
+      window.location.href = mailto;
+      return false;
+    }
+  </script>
+</body>
+</html>
