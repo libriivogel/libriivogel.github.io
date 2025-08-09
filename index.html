@@ -231,39 +231,41 @@
   </section>
 
   <!-- Formular porosie -->
-  <section id="order">
-    <h2 class="section-title">Bëj Porosinë Tënde</h2>
-    <form>
-      <label>Emri i fëmijës</label>
-      <input type="text" name="emri" required>
+<section id="order">
+  <h2 class="section-title">Bëj Porosinë Tënde</h2>
+  <form id="orderForm" onsubmit="sendToWhatsApp(event)">
+    <label for="emri">Emri i fëmijës</label>
+    <input type="text" id="emri" name="emri" required>
 
-      <label>Paketat</label>
-      <select name="paketa">
-        <option>Ylli me Emrin Tënd</option>
-        <option>Aventura në Tokën e Shqiponjave</option>
-        <option>Libri i Botës Sate</option>
-      </select>
+    <label for="paketa">Zgjidh Paketën</label>
+    <select id="paketa" name="paketa">
+      <option value="Ylli me Emrin Tënd">✨ Ylli me Emrin Tënd</option>
+      <option value="Aventura në Tokën e Shqiponjave">🏞️ Aventura në Tokën e Shqiponjave</option>
+      <option value="Libri i Botës Sate">🐾 Libri i Botës Sate</option>
+    </select>
 
-      <label>Mesazh / Dedikim</label>
-      <textarea name="dedikim" rows="4"></textarea>
+    <label for="dedikim">Mesazh / Dedikim</label>
+    <textarea id="dedikim" name="dedikim" rows="4"></textarea>
 
-      <button type="submit">Dërgo Porosinë</button>
-    </form>
-  </section>
-  
-  <script>
-document.getElementById('orderForm').addEventListener('submit', function(e) {
-  e.preventDefault();
+    <button type="submit" class="cta">Dërgo Porosinë</button>
+  </form>
+</section>
 
-  let emri = document.getElementById('emri').value;
-  let paketa = document.getElementById('paketa').value;
-  let dedikim = document.getElementById('dedikim').value;
+<script>
+function sendToWhatsApp(event) {
+  event.preventDefault();
 
-  let message = `Përshëndetje! Dua të porosis një libër personalizuar.%0A%0A📛 Emri: ${emri}%0A📦 Paketa: ${paketa}%0A💌 Dedikim: ${dedikim}`;
-  let phone = "+355692191518"; // pa "+" për WhatsApp link
-  
-  window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
-});
+  const emri = document.getElementById('emri').value.trim();
+  const paketa = document.getElementById('paketa').value;
+  const dedikim = document.getElementById('dedikim').value.trim();
+
+  // Ndërto mesazhin për WhatsApp
+  const message = `Hello`;
+  const phone = "355692191518";
+
+  // Hape WhatsApp
+  window.open(`https://wa.me/${phone}?text=${message}&type=phone_number&app_absent=0`, '_blank');
+}
 </script>
 
   <!-- Footer -->
