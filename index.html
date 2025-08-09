@@ -260,11 +260,11 @@ function sendToWhatsApp(event) {
   const dedikim = document.getElementById('dedikim').value.trim();
 
   // Ndërto mesazhin për WhatsApp
-  const message = `Hello`;
+  const message = `Përshëndetje! Dua të porosis një libër personalizuar.\n Emri: ${emri}\n Paketa: ${paketa}\n Dedikim: ${dedikim}`;
+  const encodedMessage = encodeURIComponent(message);
   const phone = "355692191518";
 
-  // Hape WhatsApp
-  window.open(`https://wa.me/${phone}?text=${message}&type=phone_number&app_absent=0`, '_blank');
+  window.open(`https://wa.me/${phone}?text=${encodedMessage}&type=phone_number&app_absent=0`, '_blank');
 }
 </script>
 
